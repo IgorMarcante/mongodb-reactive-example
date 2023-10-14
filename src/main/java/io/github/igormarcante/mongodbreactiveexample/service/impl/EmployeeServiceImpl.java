@@ -29,7 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Mono<Employee> update(Employee employee, String id) {
-        return null;
+        employee.setId(id);
+        return employeeRepository.save(employee);
     }
 
     @Override
